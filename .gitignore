@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/ros,c++,linux
-# Edit at https://www.gitignore.io/?templates=ros,c++,linux
+# Created by https://www.gitignore.io/api/ros,c++,linux,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=ros,c++,linux,visualstudiocode
 
 ### C++ ###
 # Prerequisites
@@ -103,4 +103,15 @@ qtcreator-*
 # Catkin custom files
 CATKIN_IGNORE
 
-# End of https://www.gitignore.io/api/ros,c++,linux
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/ros,c++,linux,visualstudiocode
