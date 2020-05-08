@@ -20,17 +20,17 @@ void drive_robot(float lin_x, float ang_z)
 void process_image_callback(const sensor_msgs::Image img)
 {
   int white_pixel = 255;
-
   bool found_white_pixel = false;
   int found_pixel_col = 0;
+  int data_length = img.height * img.step;
 
-  for (int i = 0; i < img.height * img.step; i++)
+  for (int i = 0; (i + 2) < data_length; i += 3)
   {
-    if (img.data[i] == white_pixel)
+    if (img.data[i] == white_pixel && img.data[i + 1] == white_pixel && img.data[i + 2] == white_pixel)
     {
       found_white_pixel = true;
 
-      // find position in that row of i
+      // find position in that step of i
       found_pixel_col = i % img.step;
 
       // already found white pixel, so don't bother looking at rest of image
