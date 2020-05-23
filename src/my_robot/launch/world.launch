@@ -11,7 +11,7 @@
   <arg name="yaw" default="3.14159" />
 
   <!-- Launch other relevant files-->
-  <include file="$(find my_robot)/launch/six_wheeler_description.launch" />
+  <include file="$(find my_robot)/launch/circular_robot_description.launch" />
 
   <!-- World File -->
   <arg name="world_file" default="$(find my_robot)/worlds/office.world" />
@@ -25,10 +25,10 @@
   </include>
 
   <!-- Find my robot Description-->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot)/urdf/six_wheeler.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot)/urdf/circular_robot.xacro'" />
 
   <!-- Spawn My Robot -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param six_wheeler_description -model six_wheeler 
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param circular_robot_description -model circular_robot 
               -x $(arg x) -y $(arg y) -z $(arg z)
               -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
 
